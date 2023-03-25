@@ -1,30 +1,33 @@
-const botonNumeros= document.getElementsByName('data-number');
-const botonOpera=document.getElementsByName('data-opera');
-const botonIgual=document.getElementsByName('data-igual')[0];
-const botonDelete=document.getElementsByName('data-delete')[0];
-var result=document.getElementById('result');
+const botonNumeros= document.querySelectorAll('.data-number');
+const botonOpera=document.querySelectorAll('.data-opera');
+const botonIgual=document.querySelector('.data-igual');
+const botonDelete=document.querySelector('.data-delete');
+const result= document.querySelector('#result');
 
-var opeActual='';
-var opeAnterior='';
-var operacion = undefined;
+let opeActual='';
+let opeAnterior='';
+let operacion = undefined;
 
 
-botonNumeros.forEach(function(boton){
-  boton.addEventListener('click', function(){
-      agregarNumero(boton.innerText);
+botonNumeros.forEach((boton) =>{
+  boton.addEventListener('click', ()=>{
+      agregarNumero(boton.id);
   })
 });
-botonOpera.forEach(function(boton){
-  boton.addEventListener('click', function(){
+botonOpera.forEach((boton)=>{
+  boton.addEventListener('click', ()=>{
+   
         selectOperacion(boton.innerText);
         
     })
 });
-botonIgual.addEventListener('click', function(){
+botonIgual.addEventListener('click', ()=>{
+
     calcular();
     actualizarDisplay();
 });
-botonDelete.addEventListener('click', function(){
+botonDelete.addEventListener('click', ()=>{
+
     clear();
     actualizarDisplay();
 });
@@ -40,10 +43,11 @@ function selectOperacion(op){
 }
 
 function calcular(){
-    var calculo;
+    let calculo;
     const anterior = parseFloat(opeAnterior);
     const actual= parseFloat(opeActual);
     if(isNaN(anterior) || isNaN(actual)) return;
+   
     switch(operacion){
         case'+':
               calculo = anterior + actual;
@@ -51,9 +55,9 @@ function calcular(){
         case'-':
               calculo = anterior - actual;
               break;
-        case'X':
+        case'x':
               calculo = anterior * actual;
-              break;
+              break;            
         case'/':
               calculo = anterior / actual;
               break;

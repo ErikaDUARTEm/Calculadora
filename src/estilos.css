@@ -3,6 +3,8 @@ body{
     padding: 0;
     margin:0;
     background: linear-gradient(to right, #00AAFF,#00FF6C);
+    justify-content: center;
+    align-items: center;
 }
 .calculadora-grilla{
     display: grid;
@@ -38,4 +40,18 @@ body{
 }
 .calculadora-grilla > button:hover{
 background-color: rgba(255, 255,255, .9);
+}
+.display{
+    width: 80%;
+    height: 60%;
+    display: grid;
+    justify-content: center;
+    align-self: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 30px;
+   
 }
