@@ -43,7 +43,7 @@ main{
 }
 
 .calculadora-grilla>button.data-delete{
-    background-color:#ff0000 ;
+    background-color:#ff00006d ;
     border-radius: 0 0 0 20px;
     -webkit-border-radius: 0 0 0 20px;
     -moz-border-radius: 0 0 0 20px;
